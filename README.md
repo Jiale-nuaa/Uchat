@@ -1,8 +1,33 @@
-## This project is named Uchat, which is a communication project 
-###项目亮点
-	使用SpringCloud 结合 alibaba 体系构建分层的聚合微服务架构项目，与Netty 集群进行异步通信并且进行离线消息存储。
-	通过RabbitMQ 实现微服务系统与 Netty 集群异步通信，Netty 集群内部消息广播，聊天离线消息异步解耦与存储。
-	通过Zookeeper 实现 Netty 服务节点注册，监听清理无效端口与队列，共享资源的分布式读写锁，Netty 服务在线人数统计。
-	使用Netty 聊天业务集群化，构建 Web-Socket 服务器，结合 Zookeeper&Redis&RabbitMQ 实现聊天业务集群化，聊天用户心跳机制，群组会话分配。
-	通过Nginx 实现系统集群的水平扩展，实现系统的负载均衡，发布静态资源与 Web 项目。
-	Docker 为 Netty 集群服务提供便捷的Zookeeper&Redis&RabbitMQ 等中间件的容器化部署。
+# Uchat Project
+Uchat is a communication project designed to provide efficient and scalable messaging services. This project leverages several technologies to build a robust microservices architecture with asynchronous communication and offline message storage.
+## Project Highlights
+
+- **Microservices Architecture**: Utilizes Spring Cloud in conjunction with Alibaba's ecosystem to construct a layered and aggregated microservices architecture.
+- **Asynchronous Communication**: Integrates with Netty clusters for asynchronous communication and offline message storage.
+- **Message Queuing**: Employs RabbitMQ to handle asynchronous communication between microservices and Netty clusters, including message broadcasting within the Netty cluster and decoupling of chat offline message storage.
+- **Service Discovery and Management**: Uses Zookeeper for Netty service node registration, listening to and cleaning invalid ports and queues, distributed read/write locks for shared resources, and online user statistics.
+- **Chat Service Scalability**: Builds a WebSocket server using Netty for chat services, combined with Zookeeper, Redis, and RabbitMQ to achieve cluster-based chat services, user heartbeat mechanisms, and group chat session management.
+- **Load Balancing and Scalability**: Implements Nginx for horizontal scaling of the system, load balancing, and serving static resources and web projects.
+- **Containerization**: Utilizes Docker for convenient containerized deployment of intermediate services such as Zookeeper, Redis, and RabbitMQ for the Netty cluster.
+## Getting Started
+
+1. **Prerequisites**:
+   - Java 11 or later
+   - Docker
+   - Maven
+   - Zookeeper
+   - Redis
+   - RabbitMQ
+   - Nginx
+
+2. **Setup Instructions**:
+   - Clone the repository: `git clone https://github.com/yourusername/uchat.git`
+   - Navigate to the project directory: `cd uchat`
+   - Build the project: `mvn clean install`
+   - Set up Docker containers for Zookeeper, Redis, and RabbitMQ.
+   - Configure application properties as needed in `application.yml` or `application.properties`.
+   - Start the services and deploy the application.
+
+3. **Running the Project**:
+   - Use Docker Compose to start the necessary services and applications: `docker-compose up`
+   - Access the application via the provided Nginx
